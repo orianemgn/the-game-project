@@ -3,6 +3,7 @@
     const scoreDisplay = document.getElementById('score')
     const resultDisplay = document.getElementById('result')
     const width = 4
+    const height = 4
     let squares = []
     let score = 0
 
@@ -10,7 +11,7 @@
     function createBoard(){
         //as long as i is < than 16 we want to keep looping 
         //to create a square
-        for(let i=0; i<width*width;i++){
+        for(let i=0; i<width*height;i++){
             square = document.createElement('div')
             square.innerHTML = 0 //element 0 inside each square/div
             gridDisplay.appendChild(square) //each square put in the grid
