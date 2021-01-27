@@ -8,31 +8,12 @@
     let score = 0
 
 
-    //function newGame(){}
-
-        //if click button new game createBoard()
-      //  window.addEventListener('load',()=> {
-        //    const newGame = document.querySelector('.start');
-         //   newGame.addEventListener('click',()=>{
-          //  window.location.reload(true)
-           // });
-        //});
 
         function refresh() {
             console.log("connected");
             window.location.reload()
         }
 
-
-
-   //function clearBoard() {
-     //   let cells = document.querySelectorAll('.cell')
-    //    console.log(cells)
-     //   cells.forEach(cell => {
-     //       gridDisplay.removeChild(cell);
-     //   })
-        
-  //  }
 
 
     //create a playing booard : I create 16 div - an array with 16 number 0 and I place 2 number 2 randomly insid 
@@ -60,20 +41,17 @@
 
     //generate number 2 randomly inside the array/grid 
     function generate(){
-        // pick a randow position in the grid : 
         randomNumber = Math.floor(Math.random()*squares.length) 
         if (squares[randomNumber].innerHTML==0){
             squares[randomNumber].innerHTML = 2
             checkForGameOver()
-        // if inside the innerHTML square !=0 try again : 
         } else generate ()
     }
 
     //number swipe right 
     function moveRight(){
         for (let i=0; i <16; i++){
-            if (i % 4 ===0){ //define where row is 
-                // store index of i : 
+            if (i % 4 ===0){  
                 let totalOne = squares[i].innerHTML 
                 let totalTwo = squares[i+1].innerHTML
                 let totalThree = squares[i+2].innerHTML
@@ -308,18 +286,18 @@
 
     function addColours() {
         for (let i=0; i < squares.length; i++) {
-          if (squares[i].innerHTML == 0) squares[i].style.backgroundColor = '#afa192'
-          else if (squares[i].innerHTML == 2) squares[i].style.backgroundColor = '#eee4da'
-          else if (squares[i].innerHTML  == 4) squares[i].style.backgroundColor = '#ede0c8' 
-          else if (squares[i].innerHTML  == 8) squares[i].style.backgroundColor = '#f2b179' 
-          else if (squares[i].innerHTML  == 16) squares[i].style.backgroundColor = '#ffcea4' 
-          else if (squares[i].innerHTML  == 32) squares[i].style.backgroundColor = '#e8c064' 
-          else if (squares[i].innerHTML == 64) squares[i].style.backgroundColor = '#ffab6e' 
-          else if (squares[i].innerHTML == 128) squares[i].style.backgroundColor = '#fd9982' 
-          else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#ead79c' 
-          else if (squares[i].innerHTML == 512) squares[i].style.backgroundColor = '#76daff' 
-          else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = '#beeaa5' 
-          else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#d7d4f0' 
+          if (squares[i].innerHTML == 0) squares[i].style.backgroundColor = '#A1FBF7'
+          else if (squares[i].innerHTML == 2) squares[i].style.backgroundColor = '#A1D9FB'
+          else if (squares[i].innerHTML  == 4) squares[i].style.backgroundColor = '#f5d8e4' 
+          else if (squares[i].innerHTML  == 8) squares[i].style.backgroundColor = '#a6cfff'
+          else if (squares[i].innerHTML  == 16) squares[i].style.backgroundColor = '#6485DD' 
+          else if (squares[i].innerHTML  == 32) squares[i].style.backgroundColor = '#acaee0'
+          else if (squares[i].innerHTML == 64) squares[i].style.backgroundColor = '#1FC7FF' 
+          else if (squares[i].innerHTML == 128) squares[i].style.backgroundColor = '#137C9F' 
+          else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#1F57FF' 
+          else if (squares[i].innerHTML == 512) squares[i].style.backgroundColor = '#95B0FF' 
+          else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = '#E3C5DB' 
+          else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#FFEFFB'
         }
     }
     addColours()
@@ -328,52 +306,11 @@
 
 
     var myTimer = setInterval(addColours, 50)
+    console.log(myTimer)
 
 
-
-
-/*
-
-    function color (){
-        for (let i=0; squares.length; i++){
-            console.log("loop square",squares[i])
-            if (squares[i].innerHTML ==0) {
-                squares[i].classList.add('colorZero')
-                //console.log('hello')
-                //console.log(squares[i])
-            } else if (squares[i].innerHTML == 2){
-                squares[i].classList.remove('colorZero')
-                squares[i].classList.add('colorTwo')
-                console.log(squares[i])
-            } else if (squares[i].innerHTML == 4){
-                squares[i].classList.remove('colorTwo')
-                square[i].classList.add('colorFour')
-                console.log(squares[i])
-            } else if (squares[i].innerHTML===8){
-                square[i].classList.add('color8')
-            } else if (squares[i].innerHTML  == 16){
-                square[i].classList.add('color16')
-            } else if (squares[i].innerHTML  == 32){
-                square[i].classList.add('color32')
-            } else if (squares[i].innerHTML  == 64){
-                square[i].classList.add('color64')
-            } else if (squares[i].innerHTML  == 128){
-                square[i].classList.add('color128')
-            } else if (squares[i].innerHTML  == 256){
-                square[i].classList.add('color256')
-            } else if (squares[i].innerHTML  == 512){
-                square[i].classList.add('color512')
-            } else if (squares[i].innerHTML  == 1024){
-                square[i].classList.add('color1024')
-            } else if (squares[i].innerHTML  == 2048){
-                square[i].classList.add('color2048')
-            }
-            
-        }
-    }
-*/
     
-    color()
+
     
 
     

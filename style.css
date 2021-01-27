@@ -13,6 +13,36 @@ body {
     font-weight: 100;
     font-size: 80px;
     font-weight: bold; 
+    
+  }
+
+  .score-container {
+    text-align: center;
+    width: 70px;
+    height: 60px;
+    border-radius: 3px;
+    border: 2px solid white;
+    background: radial-gradient(circle, rgba(245,216,228,1) 0%, rgba(148,187,233,1) 100%);
+    box-shadow: 8px 8px 0px rgba(148,187,233,1);
+    color: #FFFFFF;
+  }
+  
+  #score {
+    font-size: 30px;
+  }
+  
+  .score-title {
+    font-size: 16px;
+  }
+
+  .start {
+
+    background: radial-gradient(circle, rgba(245,216,228,1) 0%, rgba(148,187,233,1) 100%);
+    padding: 25px; 
+    border: 2px solid white;
+    font-size: 20px; 
+    font-weight: bold; 
+    box-shadow: 8px 8px 0px rgba(148,187,233,1); 
   }
 
 
@@ -25,42 +55,34 @@ body {
     flex-wrap: wrap;
     align-items: center ;
     justify-content: space-evenly;
-    background-color: aquamarine;
+    /*background-color: aquamarine;*/
+    background: radial-gradient(circle, rgba(10,114,162,1) 0%, rgba(0,3,25,1) 98%);
     column-gap: 5px;
     row-gap: 5px;
     text-align: center;
     margin-top: 20px; 
+    border: 2px solid white ;
+    padding: 10px;
+
     
 }
 
 .grid div {
     width : 100px;
-    height : 100px; 
+    height : 85px; 
     font-size: 50px;
     border: 2px solid white ;
-
     font-weight: bold;
     /*background-color: #bbada0;*/
     border-radius: 5px;
     position: relative;
+    text-align: center; 
+    padding-top: 15px; 
+    
 
 }
 
-.colorZero {
-  background-color:rgb(85, 185, 185);
-}
 
-.colorTwo {
-  background-color: rgb(185, 61, 61);
-}
-
-.colorFour{
-  background-color: rgb(255, 255, 255);
-}
-
-.color8{
-  background-color: rgb(80,20,40)
-}
 
 
 
