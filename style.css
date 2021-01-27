@@ -2,41 +2,74 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
+    justify-content: center;
+    /*
     flex-direction: column;
-    align-items: center;
-    /*background-color: rgb(247, 247, 247); */
+    
+    background-color: rgb(247, 247, 247); */
     background: radial-gradient(circle, rgba(245,216,228,1) 0%, rgba(148,187,233,1) 100%);
     color: rgb(2, 27, 27);
   }
   
+  
   h1 {
     font-weight: 100;
-    font-size: 80px;
+    font-size: 100px;
     font-weight: bold; 
+  }
+
+  .container {
+    width: 468px;
+    margin-top: 30px;
+  }
+  
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items : center;
+    margin-bottom: 20px;
+  }
+
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 1px; 
+    
     
   }
+  
+
+
 
   .score-container {
     text-align: center;
-    width: 70px;
-    height: 60px;
-    border-radius: 3px;
+    font-size: 20px;
+    width: 100px;
+    height: 80px;
+    padding: 0 25px ; 
+    margin-bottom: 10px;
     border: 2px solid white;
     background: radial-gradient(circle, rgba(245,216,228,1) 0%, rgba(148,187,233,1) 100%);
     box-shadow: 8px 8px 0px rgba(148,187,233,1);
-    color: #FFFFFF;
+    color: black;
+    
   }
   
   #score {
-    font-size: 30px;
+    font-size: 20px;
   }
   
   .score-title {
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold; 
   }
 
   .start {
-
+    width: 100x;
+    height: 80px;
+    margin-top: 20px; 
     background: radial-gradient(circle, rgba(245,216,228,1) 0%, rgba(148,187,233,1) 100%);
     padding: 25px; 
     border: 2px solid white;
@@ -55,7 +88,6 @@ body {
     flex-wrap: wrap;
     align-items: center ;
     justify-content: space-evenly;
-    /*background-color: aquamarine;*/
     background: radial-gradient(circle, rgba(10,114,162,1) 0%, rgba(0,3,25,1) 98%);
     column-gap: 5px;
     row-gap: 5px;
@@ -73,59 +105,16 @@ body {
     font-size: 50px;
     border: 2px solid white ;
     font-weight: bold;
-    /*background-color: #bbada0;*/
     border-radius: 5px;
     position: relative;
     text-align: center; 
     padding-top: 15px; 
-    
-
 }
 
 
 
 
-
-/*.game-container {
-  margin-top: 40px;
-  position: relative;
-  padding: 15px;
-  cursor: default;
-  -webkit-touch-callout: none;
-  -ms-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -ms-touch-action: none;
-  touch-action: none;
-  background: #bbada0;
-  border-radius: 6px;
-  width: 500px;
-  height: 500px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  column-gap: 10px;
-    border: 2px solid black;
-
-
-
-
-     width: 100%;
- height: 100%;
- position: absolute;
- top: 0;
- bottom: 0;
- right: 0;
- left: 0;
- margin: auto;
- &_cell {
-  display: inline-block;
-  height: 25%;
-  width: 25%;
-  padding: $grid-padding;
-  float: left;
-  background: rgba(238, 228, 218, 0.35);
-  background-clip: content-box;
-}*/ 
+.howToPlay{
+  border-bottom: 1px solid white;
+  align-items: center;
+}

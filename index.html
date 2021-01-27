@@ -7,17 +7,35 @@
         
     </head>
     <body>
-        <header>
-            <h1>2048</h1>
-        </header>
-        <div class="score-container">
-            <div class="score-title">score</div>
-            <splan id="score">0</splan>
-            <br>
-            <button class="start" type="button" value="Refresh Button" onClick="refresh()">New Game</button>
+        <div class = "container">
+            <div class="top">
+                    <h1>2048</h1>
+                    
+                <section class= "info">
+                    <div class="score-container">
+                    <div class="score-title">score</div>
+                    <span id="score">0</span>
+                    </div>
+                    <button class="start" type="button" value="Refresh Button" onClick="refresh()">New Game</button>
+                </section>
+            </div>
+            <div id="result"></div>
+            <div class="grid"></div>
+
+            <div class = "howToPlay">
+                <h2>HOW TO PLAY?</h2>
+                <p>Use your arrow keys to move the tiles. Tiles with the same number merge into one when they touch.</p>
+                <p>To win, get to 2048!</p>
+            </div>
+            <div class ="howToPlay">
+                <p>This game is inspired by Gabriele Cirulli's 2048. </p>
+            </div>
+            
+                
+
         </div>
-        <div id="result"></div>
-        <div class="grid"></div>
+
+        
 
 
         <script src="/index.js" charset="utf-8"></script>
