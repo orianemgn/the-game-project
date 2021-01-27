@@ -7,55 +7,93 @@
     let squares = []
     let score = 0
 
-    //create a playing booard 
+
+    //function newGame(){}
+
+        //if click button new game createBoard()
+      //  window.addEventListener('load',()=> {
+        //    const newGame = document.querySelector('.start');
+         //   newGame.addEventListener('click',()=>{
+          //  window.location.reload(true)
+           // });
+        //});
+
+        function refresh() {
+            console.log("connected");
+            window.location.reload()
+        }
+
+
+
+   //function clearBoard() {
+     //   let cells = document.querySelectorAll('.cell')
+    //    console.log(cells)
+     //   cells.forEach(cell => {
+     //       gridDisplay.removeChild(cell);
+     //   })
+        
+  //  }
+
+
+    //create a playing booard : I create 16 div - an array with 16 number 0 and I place 2 number 2 randomly insid 
     function createBoard(){
-        //as long as i is < than 16 we want to keep looping 
-        //to create a square
         for(let i=0; i<width*height;i++){
             square = document.createElement('div')
-            square.innerHTML = 0 //element 0 inside each square/div
-            gridDisplay.appendChild(square) //each square put in the grid
-            squares.push(square) // to push each new square into the empty squares array
+            //square.classList.add('cell')
+            //0 inside each square/div : 
+            square.innerHTML = 0 
+            //each square placed in the grid : 
+            gridDisplay.appendChild(square) 
+            //push each new square into the empty squares array
+            squares.push(square) 
+            //console.log('hello')
+            //console.log(square.innerHTML)
         }
-        generate() // we call the fonction here because we need to create de number when we create the board
-        generate () // 2nd time to generate a second 2 (we need 2 number to make meet them)
+        // function called twice here because we need to create 2 number 2 when we create the board
+        generate() 
+        generate()
+        
+        
     }
     createBoard();
 
 
     //generate number 2 randomly inside the array/grid 
-    // if inside the innerHTML square !=0 try again
     function generate(){
-        randomNumber = Math.floor(Math.random()*squares.length) // pick a randow position in the grid 
+        // pick a randow position in the grid : 
+        randomNumber = Math.floor(Math.random()*squares.length) 
         if (squares[randomNumber].innerHTML==0){
             squares[randomNumber].innerHTML = 2
             checkForGameOver()
+        // if inside the innerHTML square !=0 try again : 
         } else generate ()
     }
 
     //number swipe right 
     function moveRight(){
         for (let i=0; i <16; i++){
-            if (i % 4 ===0){ //define where row is. 
-                let totalOne = squares[i].innerHTML // store index of i in 
+            if (i % 4 ===0){ //define where row is 
+                // store index of i : 
+                let totalOne = squares[i].innerHTML 
                 let totalTwo = squares[i+1].innerHTML
                 let totalThree = squares[i+2].innerHTML
                 let totalFour = squares[i+3].innerHTML
-                //make a new array who reflet what we have in the innerHTML
-                // value are number in "string", use parseInt to tranform in number (because we need to had number together after)
+                //create new array to reflet what we have in the innerHTML
+                // value are number in "string"
+                // => parseInt to tranform in number (to addition number after)
                 let row = [parseInt(totalOne), parseInt(totalTwo), parseInt(totalThree), parseInt(totalFour)]
-                console.log(row)
+                //console.log(row)
 
                 // filter out numbers from row and store the filter number in a new array [2]
                 let filteredRow = row.filter(num => num)
-                console.log(filteredRow)
+                //console.log(filteredRow)
                 // filter all the element who don't have a number or 0 - each row have 4 row - length filter element
                 let missing = 4 - filteredRow.length
-                console.log(missing)
+                //console.log(missing)
                 let zeros = Array(missing).fill(0) //new array of zero based of amount element missing 
                 console.log(zeros)
                 // Merge 0 array with filtered array 
-                let newRow = zeros.concat(filteredRow)
+                let newRow = zeros.concat(filteredRow) //find a way to combine the 2 array but 2 come closer???
                 console.log(newRow)
 
                 // get innerHTML and assign new value
@@ -67,6 +105,7 @@
             }
         }
     }
+    
 
 
     //number swipe left 
@@ -148,12 +187,13 @@
             if (squares[i].innerHTML === squares[i+1].innerHTML){
                 let combinedTotal = parseInt(squares[i].innerHTML) + parseInt(squares[i+1].innerHTML)
                 squares[i].innerHTML = combinedTotal // Assign new value to a square
+                //console.log(combinedTotal);
                 squares[i+1].innerHTML = 0 // replace the value of the second square 
                 score +=combinedTotal
                 scoreDisplay.innerHTML=score
-
             }
         }
+        
         checkForWin();
     }
 
@@ -170,7 +210,17 @@
                 scoreDisplay.innerHTML=score 
             }
         }
+        
         checkForWin();
+    }
+
+    function colors(){
+        for (let i=0; i<16;i++){
+            if (square.innerHTML == 0){
+                square.classList.add('cell')
+                
+            }
+        }
     }
 
 
@@ -195,6 +245,7 @@
         combineRow()
         moveRight()
         generate()
+        color()
     }
 
     function keyLeft(){
@@ -202,6 +253,7 @@
         combineRow()
         moveLeft()
         generate()
+        color()
     }
 
     function keyDown(){
@@ -209,6 +261,8 @@
         combineColumn()
         moveDown()
         generate()
+        color()
+    
     }
 
     function keyUp(){
@@ -216,6 +270,7 @@
         combineColumn()
         moveUp()
         generate()
+        color()
     }
 
     //check for the number 2048 in the squares to win the game
@@ -237,10 +292,93 @@
                 zeros++
             }
         }
-        if (zeros === 0){
+        if (zeros === 0){ // and if you can't combine anymore 
             resultDisplay.innerHTML="You Lose!"
             document.removeEventListener('keyup',control)
         }
     }
+
+
+    function clear() {
+        clearInterval(myTimer)
+      }
+    
+
+    
+
+    function addColours() {
+        for (let i=0; i < squares.length; i++) {
+          if (squares[i].innerHTML == 0) squares[i].style.backgroundColor = '#afa192'
+          else if (squares[i].innerHTML == 2) squares[i].style.backgroundColor = '#eee4da'
+          else if (squares[i].innerHTML  == 4) squares[i].style.backgroundColor = '#ede0c8' 
+          else if (squares[i].innerHTML  == 8) squares[i].style.backgroundColor = '#f2b179' 
+          else if (squares[i].innerHTML  == 16) squares[i].style.backgroundColor = '#ffcea4' 
+          else if (squares[i].innerHTML  == 32) squares[i].style.backgroundColor = '#e8c064' 
+          else if (squares[i].innerHTML == 64) squares[i].style.backgroundColor = '#ffab6e' 
+          else if (squares[i].innerHTML == 128) squares[i].style.backgroundColor = '#fd9982' 
+          else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#ead79c' 
+          else if (squares[i].innerHTML == 512) squares[i].style.backgroundColor = '#76daff' 
+          else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = '#beeaa5' 
+          else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#d7d4f0' 
+        }
+    }
+    addColours()
+
+
+
+
+    var myTimer = setInterval(addColours, 50)
+
+
+
+
+/*
+
+    function color (){
+        for (let i=0; squares.length; i++){
+            console.log("loop square",squares[i])
+            if (squares[i].innerHTML ==0) {
+                squares[i].classList.add('colorZero')
+                //console.log('hello')
+                //console.log(squares[i])
+            } else if (squares[i].innerHTML == 2){
+                squares[i].classList.remove('colorZero')
+                squares[i].classList.add('colorTwo')
+                console.log(squares[i])
+            } else if (squares[i].innerHTML == 4){
+                squares[i].classList.remove('colorTwo')
+                square[i].classList.add('colorFour')
+                console.log(squares[i])
+            } else if (squares[i].innerHTML===8){
+                square[i].classList.add('color8')
+            } else if (squares[i].innerHTML  == 16){
+                square[i].classList.add('color16')
+            } else if (squares[i].innerHTML  == 32){
+                square[i].classList.add('color32')
+            } else if (squares[i].innerHTML  == 64){
+                square[i].classList.add('color64')
+            } else if (squares[i].innerHTML  == 128){
+                square[i].classList.add('color128')
+            } else if (squares[i].innerHTML  == 256){
+                square[i].classList.add('color256')
+            } else if (squares[i].innerHTML  == 512){
+                square[i].classList.add('color512')
+            } else if (squares[i].innerHTML  == 1024){
+                square[i].classList.add('color1024')
+            } else if (squares[i].innerHTML  == 2048){
+                square[i].classList.add('color2048')
+            }
+            
+        }
+    }
+*/
+    
+    color()
+    
+
+    
+
+    
+    
 
 //})
