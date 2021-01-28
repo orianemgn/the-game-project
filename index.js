@@ -10,7 +10,7 @@
 
     const start = document.querySelector('.start')
     start.addEventListener('click',refresh)
-    
+
         function refresh() {
             console.log("connected");
             window.location.reload()
