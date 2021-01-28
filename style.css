@@ -3,12 +3,11 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
-    /*
-    flex-direction: column;
-    
-    background-color: rgb(247, 247, 247); */
+    /*flex-direction: column; */
     background: radial-gradient(circle, rgba(245,216,228,1) 0%, rgba(148,187,233,1) 100%);
     color: rgb(2, 27, 27);
+    
+    
   }
   
   
@@ -21,6 +20,7 @@ body {
   .container {
     width: 468px;
     margin-top: 30px;
+    
   }
   
   .top {
@@ -34,7 +34,6 @@ body {
   .info {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     padding-left: 1px; 
     
     
@@ -117,4 +116,6 @@ body {
 .howToPlay{
   border-bottom: 1px solid white;
   align-items: center;
+  text-align: center;
+
 }
