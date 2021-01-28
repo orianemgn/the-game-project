@@ -34,9 +34,7 @@
         }
         // function called twice here because we need to create 2 number 2 when we create the board
         generate() 
-        generate()
-        
-        
+        generate() 
     }
     createBoard();
 
@@ -173,7 +171,6 @@
                 scoreDisplay.innerHTML=score
             }
         }
-        
         checkForWin();
     }
 
@@ -190,7 +187,6 @@
                 scoreDisplay.innerHTML=score 
             }
         }
-        
         checkForWin();
     }
 
@@ -226,7 +222,6 @@
         combineRow()
         moveRight()
         generate()
-
     }
 
     function keyLeft(){
@@ -235,7 +230,6 @@
         combineRow()
         moveLeft()
         generate()
-    
     }
 
     function keyDown(){
@@ -244,8 +238,6 @@
         combineColumn()
         moveDown()
         generate()
-    
-    
     }
 
     function keyUp(){
@@ -254,7 +246,6 @@
         combineColumn()
         moveUp()
         generate()
-    
     }
 
     //check for the number 2048 in the squares to win the game
@@ -308,13 +299,8 @@
     }
     addColours()
 
-
-
-
     var myTimer = setInterval(addColours, 50)
     console.log(myTimer)
-
-
 
     function musique(){
         var audio = new Audio('Airlive5.mp3');
