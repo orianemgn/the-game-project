@@ -293,8 +293,14 @@
           else if (squares[i].innerHTML == 128) squares[i].style.backgroundColor = '#137C9F' 
           else if (squares[i].innerHTML == 256) squares[i].style.backgroundColor = '#1F57FF' 
           else if (squares[i].innerHTML == 512) squares[i].style.backgroundColor = '#95B0FF' 
-          else if (squares[i].innerHTML == 1024) squares[i].style.backgroundColor = '#E3C5DB' 
-          else if (squares[i].innerHTML == 2048) squares[i].style.backgroundColor = '#FFEFFB'
+          else if (squares[i].innerHTML == 1024) {
+            squares[i].style.backgroundColor = '#E3C5DB';
+            squares[i].style.fontSize = "xx-large";
+          }
+          else if (squares[i].innerHTML == 2048){
+            squares[i].style.backgroundColor = '#FFEFFB';
+            squares[i].style.fontSize = "xx-large";
+          } 
         }
     }
     addColours()
