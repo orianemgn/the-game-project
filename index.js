@@ -222,6 +222,7 @@
 
     function keyRight(){
         moveRight()
+        musique()
         combineRow()
         moveRight()
         generate()
@@ -230,6 +231,7 @@
 
     function keyLeft(){
         moveLeft()
+        musique()
         combineRow()
         moveLeft()
         generate()
@@ -238,6 +240,7 @@
 
     function keyDown(){
         moveDown()
+        musique()
         combineColumn()
         moveDown()
         generate()
@@ -247,6 +250,7 @@
 
     function keyUp(){
         moveUp()
+        musique()
         combineColumn()
         moveUp()
         generate()
@@ -289,7 +293,7 @@
     function addColours() {
         for (let i=0; i < squares.length; i++) {
           if (squares[i].innerHTML == 0) squares[i].style.backgroundColor = '#A1FBF7'
-          else if (squares[i].innerHTML == 2) squares[i].style.backgroundColor = '#A1D9FB'
+          else if (squares[i].innerHTML == 2) squares[i].style.backgroundColor = '#A1D9FB'// #A5B2FF  #DEE3FF #A1D9FB
           else if (squares[i].innerHTML  == 4) squares[i].style.backgroundColor = '#f5d8e4' 
           else if (squares[i].innerHTML  == 8) squares[i].style.backgroundColor = '#a6cfff'
           else if (squares[i].innerHTML  == 16) squares[i].style.backgroundColor = '#6485DD' 
@@ -310,6 +314,14 @@
     var myTimer = setInterval(addColours, 50)
     console.log(myTimer)
 
+
+
+    function musique(){
+        var audio = new Audio('Airlive5.mp3');
+        audio.play();
+    }
+
+    
 
     
 
