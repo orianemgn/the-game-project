@@ -225,7 +225,7 @@
         combineRow()
         moveRight()
         generate()
-        color()
+
     }
 
     function keyLeft(){
@@ -233,7 +233,7 @@
         combineRow()
         moveLeft()
         generate()
-        color()
+    
     }
 
     function keyDown(){
@@ -241,7 +241,7 @@
         combineColumn()
         moveDown()
         generate()
-        color()
+    
     
     }
 
@@ -250,7 +250,7 @@
         combineColumn()
         moveUp()
         generate()
-        color()
+    
     }
 
     //check for the number 2048 in the squares to win the game
