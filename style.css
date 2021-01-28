@@ -16,7 +16,7 @@ body {
   }
 
   .container {
-    width: 468px;
+    width: 520px;
     margin-top: 30px;
     
   }
@@ -32,7 +32,6 @@ body {
   .info {
     display: flex;
     flex-direction: column;
-    padding-left: 1px; 
   }
   
 
@@ -43,8 +42,7 @@ body {
     font-size: 20px;
     width: 100px;
     height: 80px;
-    padding: 0 25px ; 
-    margin-bottom: 10px;
+    padding: 0 25px 0  ; 
     border: 2px solid white;
     background: radial-gradient(circle, rgba(245,216,228,1) 0%, rgba(148,187,233,1) 100%);
     box-shadow: 8px 8px 0px rgba(148,187,233,1);
